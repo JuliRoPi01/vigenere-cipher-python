@@ -30,7 +30,7 @@ def vigenere_cipher(message, key, activity) -> str:
     for i in range(len(message)):
         char = message[i]
         if char not in ABC and char.lower() in ABC:
-            char.lower()
+            char = char.lower()
             upper = True
 
         if char in ABC:
@@ -42,7 +42,7 @@ def vigenere_cipher(message, key, activity) -> str:
             new_char_i = (char_i + key_char_i)%26
             new_char = ABC[new_char_i]
             if upper:
-                new_char.upper()
+                new_char = new_char.upper()
             code += new_char
             j += 1
         else:
